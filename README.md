@@ -1,4 +1,5 @@
-data-irc
-========
 
-Visualization of IRC interaction using D3
+IRC visualization using D3
+==========================
+
+Visualizes IRC interactions using D3.

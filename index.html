@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<meta charset="utf-8">
+<head>
+<title>IRC interactions</title>
+<link rel="stylesheet" href="bootstrap/css/bootstrap.min.css">
+<link rel="stylesheet" href="irc.css">
+</head>
+<body>
+
+<div class="container">
+  <div>
+    <h1>IRC interactions <small>Demo visualization</small></h1>
+    
+    <p class="data-loading">Fetching data... this might take awhile</p>
+
+    <div class="data-ready" style="display: none">
+
+      <ul id="tabs" class="nav nav-pills" style="display: inline-block">
+        <li class="active"><a href="#histograms" data-toggle="tab">Histograms</a></li>
+        <li><a href="#global" data-target="#graph">Global interactions</a></li>
+        <li><a href="#local" data-target="#graph">Local interactions</a></li>
+      </ul>
+
+      <ul id="tabs" class="nav nav-pills pull-right" style="display: inline-block">
+        <li class="active"><a href="#showAll">Show all</a></li>
+        <li><a href="#excludeTop10">Exclude top 10</a></li>
+        <li><a href="#excludeTop20">Exclude top 20</a></li>
+      </ul>
+      
+      <div id="content">
+        
+        <div class="tab-content">
+          <div class="tab-pane row active" id="histograms">
+            <div id="user-histogram" class="col-lg-4">
+              <h2>Total interactions</h2>
+              <svg></svg>
+              <p>Histogram of number of messages per each nickname</p>
+            </div>
+            
+            <div id="pairs-histogram" class="col-lg-6">
+              <h2>Pairwise interactions</h2>
+              <svg></svg>
+              <p>Histogram of number of messages mutually exchanged by each pair
+                of nicknames</p>
+            </div>
+            
+          </div>
+          <div class="tab-pane" id="graph">
+            <svg></svg>
+          </div>
+        </div>
+
+        <a class="pull-right"
+                  href="https://github.com/vprus/data-irc">Source</a>
+        
+      </div>
+
+    </div>
+
+</div>
+
+
+<script src="jquery/jquery-1.11.0.min.js"></script>
+<script src="bootstrap/js/bootstrap.min.js"></script>
+<script src="d3/d3.js"></script>
+<script src="histogram.js"></script>
+<script src="force.js"></script>
+<script src="irc.js"></script>
